@@ -2,13 +2,13 @@
 Simple youtube clone built using flask.
 
 ## Home 
-![home](C:\Users\91868\OneDrive\Desktop\home.png)
+![home](home.png)
 
 ## Dashboard
-![home](C:\Users\91868\OneDrive\Desktop\dashboard.png)
+![dashboard](dashboard.png)
 
 ## Upload Video
-![home](C:\Users\91868\OneDrive\Desktop\upload.png)
+![upload](upload.png)
 
 ## Login
-![home](C:\Users\91868\OneDrive\Desktop\login.png)
+![login](login.png)
