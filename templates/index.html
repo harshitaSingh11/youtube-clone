@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+<div id="content-wrapper">
+   <div class="container-fluid pb-0">
+      <div class="video-block section-padding">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="main-title">
+                  <h6>All Videos</h6>
+               </div>
+            </div>
+
+
+            {% for video in videos %}
+            {% set fname = 'img/' + video.img_file %}
+            <div class="col-xl-3 col-sm-6 mb-3">
+               <div class="video-card">
+                  <div class="video-card-image">
+                     <a class="play-icon" href="/video/{{ video.slug }}"><i class="fas fa-play-circle"></i></a>
+                     <a href="#"><img class="img-fluid" src="{{ url_for('static', filename=fname) }}" alt=""></a>
+                     <div class="time">{{video.duration}}</div>
+                  </div>
+                  <div class="video-card-body">
+                     <div class="video-title">
+                        <a href="/video/{{ video.slug }}">{{video.title}}</a>
+                     </div>
+                     <div class="video-page text-success">
+                        {{video.category}}
+                     </div>
+                     <div class="video-view">
+                        <i class="fas fa-calendar-alt"></i> {{video.date}}
+                     </div>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+
+         <!-- Pagination -->
+         <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center pagination-sm mb-4">
+               <li class="page-item">
+                  <a class="page-link" href="{{prev}}">&larr; Previous</a>
+               </li>
+               <li class="page-item">
+                  <a class="page-link" href="{{next}}">Next &rarr;</a>
+               </li>
+            </ul>
+         </nav>
+
+
+
+
+
+      </div>
+   </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block body %}
+<div id="content-wrapper">
+    <div class="container-fluid upload-details">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-title">
+                    <h6>Upload Details</h6>
+                </div>
+            </div>
+
+            <div class="col-lg-10">
+
+            </div>
+        </div>
+
+        <form name="sentMessage" id="contactForm" action="/edit/{{sno}}" method="post">
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Video Title</label>
+                    <input type="text" placeholder="Video Title" id="title" name="title" class="form-control"
+                        value="{{video.title}}" required data-validation-required-message="Please enter title.">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>About</label>
+                    <textarea rows="3" id="description" name="description"
+                        class="form-control" required data-validation-required-message="Please enter description.">{{video.description}}</textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Category</label>
+                    <input type="text" placeholder="Video Category" id="category" name="category" class="form-control"
+                        value="{{video.category}}" required data-validation-required-message="Please enter video category.">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Duration</label>
+                    <input type="text" placeholder="Video Duration" id="duration" name="duration" class="form-control"
+                        value="{{video.duration}}" required data-validation-required-message="Please enter duration.">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Slug</label>
+                    <input type="text" placeholder="Slug" id="slug" name="slug" class="form-control"
+                        value="{{video.slug}}" required data-validation-required-message="Please enter slug.">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Thumbnail Image</label>
+                    <input type="text" placeholder="Image File" id="image" name="img_file" class="form-control"
+                        value="{{video.img_file}}" required data-validation-required-message="Please enter image file.">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Video File</label>
+                    <input type="text" placeholder="Enter link for video" id="video" name="video_file"
+                        class="form-control" value="{{video.video_file}}" required data-validation-required-message="Please enter video link.">
+                </div>
+            </div>
+            <!-- <div class="youtube-area text-center mt-3"> -->
+                <button type="submit" class="btn btn-outline-primary">Save Changes</button>
+            <!-- </div> -->
+        </form>
+
+
+    </div>
+</div>
+
+
+{% endblock %}

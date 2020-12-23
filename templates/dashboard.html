@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block body %}
+<div id="content-wrapper">
+    <div class="container-fluid upload-details">
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-title">
+                    <h6>Edit posts</h6>
+                </div>
+            </div>
+        </div>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for video in videos %}
+
+                <tr>
+                    <td>{{video.sno}}</td>
+                    <td>{{video.title}}</td>
+                    <td>{{video.date}}</td>
+                    <td><a href="/edit/{{video.sno}}"><button type="button"
+                                class="btn btn-success border-none">Edit</button></a></td>
+                    <td><a href="/delete/{{ video.sno }}"><button type="button"
+                                class="btn btn-danger border-none">Delete</button></a></td>
+                </tr>
+
+
+                
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+
+</div>
+</div>
+
+{% endblock %}
